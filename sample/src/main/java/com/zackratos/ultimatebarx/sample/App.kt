@@ -21,3 +21,16 @@ class App : Application() {
         
         val context: Context
             get() = _context ?: throw IllegalStateException("Application context not initialized!")
+            }
+
+    override fun onCreate() {
+        super.onCreate()
+        _context = applicationContext
+        
+        // Initialize default night mode (optional)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        
+        // Initialize other app-wide components here
+        initializeTimber()
+        setupCrashReporting()
+    }
