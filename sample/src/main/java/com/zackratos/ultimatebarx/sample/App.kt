@@ -39,3 +39,13 @@ class App : Application() {
         // Example: Initialize logging library
         // Timber.plant(Timber.DebugTree())
     }
+
+    private fun setupCrashReporting() {
+        // Example: Crash reporting initialization
+        // FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        // Handle low memory situations
+    }
