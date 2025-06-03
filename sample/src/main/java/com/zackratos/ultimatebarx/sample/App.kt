@@ -34,3 +34,8 @@ class App : Application() {
         initializeTimber()
         setupCrashReporting()
     }
+
+    private fun initializeTimber() {
+        // Example: Initialize logging library
+        // Timber.plant(Timber.DebugTree())
+    }
