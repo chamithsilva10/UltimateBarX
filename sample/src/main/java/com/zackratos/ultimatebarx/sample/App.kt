@@ -23,3 +23,20 @@ class App: Application() {
     }
 
 }
+
+ private fun createNotificationChannels() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channels = listOf(
+                NotificationChannel(
+                    "default_channel",
+                    getString(R.string.default_channel_name),
+                    NotificationManager.IMPORTANCE_DEFAULT
+                ).apply {
+                    description = getString(R.string.default_channel_description)
+                }
+            )
+            
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannels(channels)
+        }
+    }
