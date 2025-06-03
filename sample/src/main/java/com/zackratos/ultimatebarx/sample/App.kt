@@ -49,3 +49,9 @@ class App : Application() {
         super.onLowMemory()
         // Handle low memory situations
     }
+    
+    override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
+        // Handle different trim memory levels
+    }
+}
